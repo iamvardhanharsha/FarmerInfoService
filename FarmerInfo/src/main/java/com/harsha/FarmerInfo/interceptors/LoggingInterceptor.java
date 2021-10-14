@@ -18,8 +18,11 @@ public class LoggingInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
-		MDC.put("applicationid", String.valueOf(System.currentTimeMillis()));
+		// MDC.put("applicationid", String.valueOf(System.currentTimeMillis()));
+
+		MDC.put("applicationid", request.getParameter("applicationId"));
 		log.info("applicationid set to mdc");
+
 		return true;
 	}
 
