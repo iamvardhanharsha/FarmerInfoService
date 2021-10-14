@@ -26,8 +26,9 @@ public class LoggingInterceptor implements HandlerInterceptor {
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
 			@Nullable Exception ex) throws Exception {
-		MDC.clear();
 		log.info(" mdc cleared");
+		MDC.clear();
+
 	}
 
 }
