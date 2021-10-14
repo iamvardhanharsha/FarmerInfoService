@@ -16,14 +16,14 @@ import lombok.extern.slf4j.Slf4j;
 @Aspect
 @Slf4j
 public class FarmerInfoAspect {
-	@Before(value = "execution(com.harsha.FarmerInfo..*")
+	@Before(value = "execution(* com.harsha.FarmerInfo..*.*(..)")
 	public void addsysout(JoinPoint joinPoint) {
 		String classname = joinPoint.getSignature().getDeclaringType().getName();
 		String methodname = joinPoint.getSignature().getName();
 		log.info("Method execution started :" + classname + "  method name :" + methodname);
 	}
 
-	@After(value = "execution(com.harsha.FarmerInfo..*")
+	@After(value = "execution(* com.harsha.FarmerInfo..*.*(..)")
 	public void aftersysout(JoinPoint joinPoint) {
 		String classname = joinPoint.getSignature().getDeclaringType().getName();
 		String methodname = joinPoint.getSignature().getName();
