@@ -24,7 +24,6 @@ import com.harsha.FarmerInfo.services.FramerDBService;
 @RestController
 @RequestMapping(path = "/FarmerInfo")
 @CrossOrigin
-
 public class FarmerInfoController {
 
 	@Autowired
